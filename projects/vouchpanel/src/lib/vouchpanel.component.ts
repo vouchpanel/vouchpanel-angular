@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-vouchpanel',
-  template: ` <div className="vouchpanel-publish" data-wall="{{" id }}></div> `,
+  selector: 'vouchpanel',
+  template: `<div class="vouchpanel-publish" [attr.dark-mode]="darkMode" [attr.data-wall]="id"></div>`,
   styles: [],
 })
 export class VouchpanelComponent implements OnInit {
-  @Input() id: number;
+  @Input() id!: string;
+  @Input() darkMode!: string;
 
-  constructor(id: number) {
-    this.id = id;
+  constructor() {
+
   }
 
   loadScript() {

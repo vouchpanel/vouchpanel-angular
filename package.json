@@ -1,14 +1,17 @@
 {
   "name": "vouchpanel-angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "export": "ng build vouchpanel --prod && cp README.md src/ && cp README.md dist/",
+    "publish": "cd dist/vouchpanel && npm publish --access public"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~11.2.8",
     "@angular/common": "~11.2.8",

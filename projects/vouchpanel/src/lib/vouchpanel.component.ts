@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class VouchpanelComponent implements OnInit {
   @Input() id!: string;
-  @Input() darkMode!: string;
+  @Input() darkMode!: "on" | "off";
 
   constructor() {
 

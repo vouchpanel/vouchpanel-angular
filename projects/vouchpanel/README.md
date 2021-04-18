@@ -1,24 +1,60 @@
-# Vouchpanel
+# @vouchpanel/angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+[![Package Version][package-image]][package-url]
+[![Open Issues][issues-image]][issues-url]
+[![Build Status][build-image]][build-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Dependencies Status][dependencies-image]][dependencies-url]
+[![Dev Dependencies Status][dev-dependencies-image]][dev-dependencies-url]
+[![Commitizen Friendly][commitizen-image]][commitizen-url]
 
-## Code scaffolding
+Quickly embed a vouchpanel into your Angular project.
 
-Run `ng generate component component-name --project vouchpanel` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project vouchpanel`.
-> Note: Don't forget to add `--project vouchpanel` or else it will be added to the default project in your `angular.json` file. 
+### How To Use
 
-## Build
+Install with yarn (or `npm install`):
 
-Run `ng build vouchpanel` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+yarn add @vouchpanel/angular
+```
 
-## Publishing
+Include it as a module.
 
-After building your library with `ng build vouchpanel`, go to the dist folder `cd dist/vouchpanel` and run `npm publish`.
+```tsx
+import { VouchpanelModule } from '@vouchpanel/angular'
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    VouchpanelModule,
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng test vouchpanel` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add the following to the corresponding angular template. Replace `id` with your wall id from [app.vouchpanel.com](https://app.vouchpanel.com).
+```tsx
+// *.component.html
+<vouchpanel darkMode="off" id="4"></vouchpanel>
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[project-url]: https://github.com/vouchpanel/vouchpanel-angular
+[package-image]: https://img.shields.io/npm/v/@vouchpanel/angular
+[package-url]: https://www.npmjs.com/package/@vouchpanel/angular
+[issues-image]: https://img.shields.io/github/issues/vouchpanel/vouchpanel-angular.svg?style=popout
+[issues-url]: https://github.com/vouchpanel/vouchpanel-angular/issues
+[build-image]: https://travis-ci.org/vouchpanel/vouchpanel-angular.svg?branch=master
+[build-url]: https://travis-ci.org/vouchpanel/vouchpanel-angular
+[coverage-image]: https://coveralls.io/repos/github/vouchpanel/vouchpanel-angular/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/vouchpanel/vouchpanel-angular?branch=master
+[dependencies-image]: https://img.shields.io/david/vouchpanel/vouchpanel-angular
+[dependencies-url]: https://www.npmjs.com/package/@vouchpanel/angular
+[dev-dependencies-image]: https://img.shields.io/david/dev/vouchpanel/vouchpanel-angular
+[dev-dependencies-url]: https://www.npmjs.com/package/@vouchpanel/angular
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli

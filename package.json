@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "readme": "cat _README.md > README.md && (curl https://raw.githubusercontent.com/vouchpanel/vouchpanel-site/main/docs/languages/angular.md) >> README.md",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "export": "ng build vouchpanel --prod && cp README.md src/ && cp README.md dist/",
-    "publish": "cd dist/vouchpanel && npm publish --access public"
+    "export": "cp README.md projects/vouchpanel/ && ng build vouchpanel --prod && yarn publish-to-npm",
+    "publish-to-npm": "cd dist/vouchpanel && npm publish --access public && cd ~/vouchpanel-angular"
   },
   "private": false,
   "dependencies": {
